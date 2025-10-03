@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="16dp"
+	app:cardCornerRadius="16dp"
+	app:cardUseCompatPadding="true">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:fillViewport="true">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:padding="16dp">
+
+			<TextView
+				android:id="@+id/tvTitle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Confirm Booking"
+				android:textSize="20sp"
+				android:textStyle="bold" />
+
+			<TextView
+				android:id="@+id/tvBikeName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="8dp"
+				android:text="Bike Name" />
+
+			<ImageView
+				android:id="@+id/ivBike"
+				android:layout_width="match_parent"
+				android:layout_height="180dp"
+				android:scaleType="centerCrop"
+				android:layout_marginTop="8dp"
+				android:contentDescription="Bike" />
+
+			<TextView
+				android:id="@+id/tvTimeWindow"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="Time window" />
+
+            <ImageView
+				android:id="@+id/ivMapPreview"
+				android:layout_width="match_parent"
+				android:layout_height="150dp"
+				android:layout_marginTop="12dp"
+				android:scaleType="centerCrop"
+                android:src="@drawable/img"
+				android:contentDescription="Map preview" />
+
+			<com.google.android.material.card.MaterialCardView
+				android:id="@+id/cardPolicy"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="12dp"
+				app:cardCornerRadius="12dp"
+				app:cardBackgroundColor="@android:color/transparent"
+				app:strokeColor="@android:color/darker_gray"
+				app:strokeWidth="1dp">
+
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:padding="12dp">
+
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Cancellation Policy"
+						android:textStyle="bold" />
+
+					<TextView
+						android:id="@+id/tvPolicy"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="6dp"
+						android:text="Free cancellation up to 30 minutes before start. After that, charges may apply." />
+				</LinearLayout>
+			</com.google.android.material.card.MaterialCardView>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:gravity="end"
+				android:orientation="horizontal">
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnCancel"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Cancel" />
+
+				<com.google.android.material.button.MaterialButton
+					android:id="@+id/btnConfirm"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="8dp"
+					android:text="Confirm" />
+			</LinearLayout>
+		</LinearLayout>
+	</ScrollView>
+</com.google.android.material.card.MaterialCardView>
+
+
+

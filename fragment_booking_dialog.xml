@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Enhanced Header -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <ImageView
+                    android:id="@+id/btnBack"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@android:drawable/ic_menu_revert"
+                    android:background="@drawable/bg_circle_light_purple"
+                    android:padding="6dp"
+                    android:contentDescription="Back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Book Your Ride"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_centerInParent="true" />
+
+                <ImageView
+                    android:id="@+id/btnFavorite"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@android:drawable/btn_star"
+                    android:background="@drawable/bg_circle_light_purple"
+                    android:padding="6dp"
+                    android:contentDescription="Favorite" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Hidden placeholders for redesigned spec ids to avoid build errors -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone">
+            <TextView android:id="@+id/tvBikeSpecType" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecFuel" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecYear" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecEngine" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecFuelCapacity" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecMileage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecTopSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            <TextView android:id="@+id/tvBikeSpecDeposit" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Enhanced Bike Image -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/ivBikeImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:src="@drawable/logo1"
+                android:background="@drawable/bg_bike_image"
+                android:scaleType="centerCrop"
+                android:contentDescription="Bike Image" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Pricing selector removed -->
+        <View android:layout_width="match_parent" android:layout_height="0dp" />
+
+        
+
+        <!-- Enhanced Date Selection -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layoutDateSelection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📅 Select Rental Dates"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From:"
+                        android:textColor="#6C6C80"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp" />
+
+                    <Button
+                        android:id="@+id/btnStartDate"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="Select Start Date"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_chip_selected"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|start"
+                        android:layout_marginEnd="8dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="To:"
+                        android:textColor="#6C6C80"
+                        android:textSize="16sp"
+                        android:layout_marginEnd="16dp" />
+
+                    <Button
+                        android:id="@+id/btnEndDate"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="Select End Date"
+                        android:textColor="#FFFFFF"
+                        android:background="@drawable/bg_chip_selected"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:drawableLeft="@android:drawable/ic_menu_my_calendar"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical|start" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvDateDuration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Duration: 1 day"
+                    android:textColor="#7C3AED"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        
+
+        <!-- Enhanced Bike Details -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvBikeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Marina Cruiser - 2022 Model"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="8dp" />
+
+                <!-- Bike Type Badge -->
+                <TextView
+                    android:id="@+id/tvBikeType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STANDARD"
+                    android:textColor="#7C3AED"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:background="@drawable/bg_chip_teal"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="6dp"
+                    android:layout_marginBottom="12dp" />
+
+                <!-- Complete Address -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_mylocation"
+                        app:tint="#6C6C80"
+                        android:contentDescription="Address" />
+
+                    <TextView
+                        android:id="@+id/tvBikeAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="15, Beach Road, Marina Beach, Chennai"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- Landmark -->
+                <LinearLayout
+                    android:id="@+id/llLandmark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_compass"
+                        app:tint="#6C6C80"
+                        android:contentDescription="Landmark" />
+
+                    <TextView
+                        android:id="@+id/tvBikeLandmark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Near Marina Beach"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- Bike Description -->
+                <LinearLayout
+                    android:id="@+id/llDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_info_details"
+                        app:tint="#6C6C80"
+                        android:contentDescription="Description" />
+
+                    <TextView
+                        android:id="@+id/tvBikeDescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Well maintained bike with good mileage"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- Enhanced Rating -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="12dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/btn_star"
+                        android:contentDescription="Star" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.1"
+                        android:textColor="#22223B"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="(20 reviews)"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+                <!-- Enhanced Location -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_compass"
+                        android:contentDescription="Location" />
+
+                    <TextView
+                        android:id="@+id/tvBikeLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marina Beach, Chennai"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Specifications -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/layoutSpecs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bike Specifications"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <TextView android:id="@+id/tvSpecModel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecYear" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecFuel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecEngBat" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecPowerTorque" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecRangeMileage" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecDeposit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+                <TextView android:id="@+id/tvSpecSafety" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="14sp" android:textColor="#6C6C80" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Enhanced Owner Details -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📋 Rental Details"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <!-- Rental Duration -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_recent_history"
+                        app:tint="#6C6C80"
+                        android:contentDescription="Duration" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration: "
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvRentalDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1-24 hours"
+                        android:textColor="#22223B"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Pickup Mode -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="8dp">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_directions"
+                        app:tint="#6C6C80"
+                        android:contentDescription="Pickup" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pickup: "
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp"
+                        android:layout_marginStart="8dp" />
+
+                    <TextView
+                        android:id="@+id/tvPickupMode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Manual pickup"
+                        android:textColor="#22223B"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Enhanced Owner Details -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="20dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/bg_avatar_circle"
+                    android:background="@drawable/bg_circle_light_purple"
+                    android:padding="12dp"
+                    android:contentDescription="Owner Avatar" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="16dp">
+
+                    <TextView
+                        android:id="@+id/tvOwnerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rahul Kumar"
+                        android:textColor="#22223B"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvOwnerPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone: 9876543210"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp"
+                        android:layout_marginTop="2dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bike owner"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnContactOwner"
+                    android:layout_width="48dp"
+                    android:layout_height="42dp"
+                    android:background="@drawable/bg_bike_image"
+                    android:contentDescription="Contact Owner"
+                    android:src="@android:drawable/ic_menu_help" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Map Preview -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <ImageView
+                android:id="@+id/ivMapPreview"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:src="@drawable/img"
+                android:scaleType="centerCrop"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Map Preview" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Open in Maps Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/btnOpenInMaps"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Open in Maps"
+                android:background="@drawable/bg_button_white_outline"
+                android:textColor="#FFFFFF" />
+            <Button
+                android:id="@+id/btnViewMap"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <!-- Important Features & Safety -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Important Features &amp; Safety"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView android:id="@+id/tvFeature1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Full Insurance Coverage" />
+                <TextView android:id="@+id/tvFeature2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="24/7 Roadside Assistance" />
+                <TextView android:id="@+id/tvFeature3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Smart Lock Technology" />
+                <TextView android:id="@+id/tvFeature4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Real-time GPS Tracking" />
+                <TextView android:id="@+id/tvFeature5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Free Helmet &amp; Safety Gear" />
+                <TextView android:id="@+id/tvFeature6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Instant Booking &amp; Pickup" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Booking Options -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Booking Options"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+                <!-- Hidden mirror ids used by Kotlin population for alternate layout -->
+                <TextView android:id="@+id/tvSelectedBookingType" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Hourly Rate" />
+                    <TextView android:id="@+id/tvHourlyRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹0/hr" />
+                    <TextView android:id="@+id/tvHourlyPrice" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="6dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Daily Rate" />
+                    <TextView android:id="@+id/tvDailyRate" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="₹0/day" />
+                    <TextView android:id="@+id/tvDailyPrice" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginVertical="10dp" android:background="#E0E0E0" />
+                <!-- Duplicate cancellation copy removed (a separate card exists below) -->
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Special Offers -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Special Offers"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <TextView android:id="@+id/tvOffer1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="Book 4+ hours: 10% off" />
+                <TextView android:id="@+id/tvOffer2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Book 2+ days: 15% off" />
+                <TextView android:id="@+id/tvOffer3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="First-time users: 20% off" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Full Address Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@android:drawable/ic_menu_mylocation"
+                android:contentDescription="Address" />
+
+            <TextView
+                android:id="@+id/tvFullAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:textColor="#6C6C80"
+                android:textSize="14sp"
+                android:text="Address" />
+        </LinearLayout>
+
+        <!-- Price Breakdown -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price Breakdown"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Base Price (₹/hr)"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvBasePrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0"
+                        android:textColor="#22223B"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Duration"
+                        android:textColor="#6C6C80"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvPriceDuration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="2 hours"
+                        android:textColor="#22223B"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginVertical="12dp"
+                    android:background="#E0E0E0" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total Cost"
+                        android:textColor="#22223B"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/tvTotalCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="₹0"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Cancellation Policy -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancellation Policy"
+                    android:textColor="#22223B"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="• Free cancellation up to 1 hour before pickup\n• 50% refund if cancelled within 1 hour\n• No refund for no-show"
+                    android:textColor="#6C6C80"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="Cancel"
+                android:background="@drawable/bg_button_white_outline"
+                android:textColor="#FFFFFF" />
+
+            <Button
+                android:id="@+id/btnBookNow"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Book Now"
+                android:background="@drawable/bg_button_purple"
+                android:textColor="#FFFFFF" />
+
+        </LinearLayout>
+
+        <!-- Terms and Conditions -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/terms_and_conditions"
+                    android:textColor="#22223B"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="16dp" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/bg_input_field"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:id="@+id/tvTermsAndConditions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1. **Rental Agreement**: By proceeding with this booking, you agree to the rental terms and conditions.\n\n2. **Valid License**: You must possess a valid driving license and be at least 18 years old.\n\n4. **Fuel Policy**: Basic fuel will be provided. You can refuel yourself if needed.\n\n5. **Damage Policy**: You are responsible for any damage during the rental period.\n\n6. **Late Returns**: Additional charges apply for late returns.\n\n7. **Cancellation**: Free cancellation up to 2 hours before pickup time.\n\n8. **Safety**: Follow all traffic rules and wear appropriate safety gear.\n\n9. **Maintenance**: Report any mechanical issues immediately.\n\n10. **Privacy**: Your personal information is protected as per our privacy policy."
+                        android:textColor="#6C6C80"
+                        android:textSize="12sp"
+                        android:lineSpacingExtra="2dp" />
+
+                </ScrollView>
+
+
+
+                <Button
+                    android:id="@+id/btnViewFullTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/view_full_terms"
+                    android:textColor="#7C3AED"
+                    android:background="@android:color/transparent"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:gravity="start" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Enhanced Payment Button -->
+        <Button
+            android:id="@+id/btnPayment"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Proceed to Payment"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:background="@drawable/bg_button_purple_enhanced"
+            android:textSize="18sp"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+
+</ScrollView>

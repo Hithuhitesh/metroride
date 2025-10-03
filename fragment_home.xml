@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFBFB">
+
+    <!-- Enhanced Search Bar with Autocomplete -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+        
+        <!-- Enhanced Search Bar -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="#7C3AED"
+                    android:layout_marginEnd="12dp"
+                    android:contentDescription="Search Icon" />
+
+                <EditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Search address, city, location"
+                    android:background="@null"
+                    android:textColor="#22223B"
+                    android:textColorHint="#B0AFC6"
+                    android:textSize="16sp"
+                    android:inputType="text"
+                    android:autofillHints="username" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        
+        <!-- Autocomplete Suggestions -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvSuggestions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_list_item"
+            android:visibility="gone"
+            android:maxHeight="200dp"
+            android:elevation="8dp" />
+
+    </LinearLayout>
+
+    <!-- Enhanced Location Selector -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:layout_marginBottom="16dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@android:drawable/ic_menu_mylocation"
+            app:tint="#7C3AED"
+            android:layout_marginEnd="8dp" />
+
+        <TextView
+            android:id="@+id/tvLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="velachery, chennai"
+            android:textColor="#7C3AED"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!-- Welcome Message -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome to Metro ride"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#22223B"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Enhanced Filter Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter"
+                android:textColor="#22223B"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:layout_marginBottom="16dp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/chipGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAll"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ALL"
+                        android:textAllCaps="true"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_selected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnStandard"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STANDARD"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnScooter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SCOOTER"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnElectric"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ELECTRIC"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnSports"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SPORTS"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnClassic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CLASSIC"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnAdventure"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADVENTURE"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:layout_marginEnd="12dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnLuxury"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LUXURY"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btnOthers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="OTHERS"
+                        android:textAllCaps="true"
+                        android:textColor="#7C3AED"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@drawable/bg_chip_unselected"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="20dp"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:ellipsize="end"
+                        android:layout_marginEnd="24dp" />
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Enhanced Bike List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBikes"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp" />
+
+</LinearLayout> 

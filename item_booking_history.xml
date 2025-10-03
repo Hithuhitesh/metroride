@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tvBikeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike Name"
+        android:textColor="#22223B"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRenterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Renter: Alice"
+        android:textColor="#6C6C80"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Duration: 2 days"
+        android:textColor="#6C6C80"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="₹192"
+        android:textColor="#7C3AED"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvPickupTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pickup: 2024-06-01 10:00"
+        android:textColor="#6C6C80"
+        android:textSize="13sp"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvDropTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Drop: 2024-06-03 10:00"
+        android:textColor="#6C6C80"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Completed"
+        android:textColor="#4CAF50"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout> 

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical"
+		android:padding="16dp">
+
+		<TextView
+			android:id="@+id/tvHeader"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Price Breakdown"
+			android:textSize="20sp"
+			android:textStyle="bold" />
+
+		<TextView
+			android:id="@+id/tvBikeName"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="8dp"
+			android:text="Bike name" />
+
+		<TextView
+			android:id="@+id/tvWindow"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="4dp"
+			android:text="Time window" />
+
+		<ImageView
+			android:id="@+id/ivMapPreview"
+			android:layout_width="match_parent"
+			android:layout_height="150dp"
+			android:layout_marginTop="12dp"
+			android:scaleType="centerCrop"
+			android:src="@drawable/harley_luxury"
+			android:contentDescription="Map preview" />
+
+		<com.google.android.material.card.MaterialCardView
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="12dp"
+			app:cardCornerRadius="12dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:padding="12dp">
+
+				<TextView
+					android:id="@+id/tvDurationRow"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Duration: -" />
+
+				<TextView
+					android:id="@+id/tvRateRow"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:text="Rate: -" />
+
+				<TextView
+					android:id="@+id/tvSubtotalRow"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:text="Subtotal: -" />
+
+				<TextView
+					android:id="@+id/tvTaxRow"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="4dp"
+					android:text="Tax (18%): -" />
+
+				<TextView
+					android:id="@+id/tvTotalRow"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="6dp"
+					android:textStyle="bold"
+					android:text="Total: -" />
+			</LinearLayout>
+		</com.google.android.material.card.MaterialCardView>
+
+		<com.google.android.material.button.MaterialButton
+			android:id="@+id/btnPay"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="16dp"
+			android:text="Pay Now" />
+	</LinearLayout>
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+

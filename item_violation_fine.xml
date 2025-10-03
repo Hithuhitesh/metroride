@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="12dp"
+    android:background="#FFFFFF"
+    android:layout_marginBottom="8dp"
+    android:elevation="2dp">
+
+    <TextView
+        android:id="@+id/tvRenterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Renter: Alice"
+        android:textColor="#7C3AED"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvBikeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bike: Marina Cruiser"
+        android:textColor="#22223B"
+        android:textSize="15sp"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type: Late Return"
+        android:textColor="#E65100"
+        android:textSize="14sp"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvFineAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fine: ₹100"
+        android:textColor="#E53935"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp" />
+
+    <TextView
+        android:id="@+id/tvPaymentStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status: Unpaid"
+        android:textColor="#6C6C80"
+        android:textSize="14sp"
+        android:layout_marginTop="2dp" />
+
+    <Button
+        android:id="@+id/btnMarkPaid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mark as Paid"
+        android:textColor="#FFFFFF"
+        android:background="#4CAF50"
+        android:textSize="13sp"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout> 
